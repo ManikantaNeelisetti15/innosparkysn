@@ -1,0 +1,15 @@
+/* Additional/responsive tweaks */
+
+/* Make header elements more compact on small screens */
+@media (max-width:480px){
+  .brand-title{font-size:1rem}
+  .logo{height:40px}
+  .hero{min-height:380px;padding:28px 0}
+  .hero-text h1{font-size:1.6rem}
+  .lead{font-size:0.95rem}
+  .site-nav.open{left:10px;right:10px}
+  .features-grid{gap:12px}
+  .feature-card{padding:14px}
+  .course-item{padding:14px}
+  .form-card input, .form-card textarea{padding:8px}
+}

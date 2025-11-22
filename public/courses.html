@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Courses - Learn With Us</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome (for social icons) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      background-blend-mode: lighten;
+      background-color: rgba(255, 255, 255, 0.95);
+      scroll-behavior: smooth;
+    }
+    .logo img {
+      height: 55px;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgb(255, 255, 255);
+      backdrop-filter: blur(6px);
+    }
+    .navbar-brand,
+    .nav-link {
+      color: #2b4ae4 !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+.nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #007bff, #00b4d8);
+      background-image: url("bg.jpg");
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      border-radius: 0 0 50px 50px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    /* Courses */
+    .course-card {
+      transition: transform 0.0s ease, box-shadow 0.0s ease;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .card /*course-card h-100 shadow-sm*/{ 
+      cursor: pointer;
+    }
+    .btn{
+
+      background-color: #007bff;
+      color: white;
+      border-radius: 30px;
+      padding: 12px 40px;
+      font-weight: 600;
+      transition: 0.3s;
+      border: none;
+    }
+    
+   
+
+    /* Importance Section */
+    .importance-section {
+      background: rgba(227, 242, 253, 0.8);
+      padding: 80px 0;
+      border-radius: 40px;
+    }
+
+    /* Why Choose Us */
+    .why-choose-us {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 80px 0;
+      border-radius: 40px;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: rgba(241, 243, 245, 0.85);
+      padding: 80px 0;
+      border-radius: 40px;
+    }
+    .contact-info i {
+      font-size: 24px;
+      color: #007bff;
+      margin-right: 10px;
+    }
+    
+
+    /* Footer */
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+    }
+    /* Prevent right-side overflow on all pages */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+/* Fix flex containers overflowing */
+.d-flex.flex-nowrap {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  box-sizing: border-box !important;
+  scrollbar-width: none;
+}
+.d-flex.flex-nowrap::-webkit-scrollbar {
+  display: none;
+}
+
+/* Fix images overflowing */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix sections spacing */
+section {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Sticky Enroll Button */
+.floating-enroll {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 12px 22px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+  /* Prevent right-side overflow on all pages */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+/* Fix flex containers overflowing */
+.d-flex.flex-nowrap {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  box-sizing: border-box !important;
+  scrollbar-width: none;
+}
+.d-flex.flex-nowrap::-webkit-scrollbar {
+  display: none;
+}
+
+/* Fix images overflowing */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix sections spacing */
+section {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Sticky Enroll Button */
+.floating-enroll {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 12px 22px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+  .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #17426f;
+      color: white;
+      padding: 15px 22px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+      z-index: 10000;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.35);
+    }
+  </style>
+</head>
+<body>
+  
+
+  <!-- Navbar -->
+<section class="header-section">
+  <nav class="navbar navbar-expand-lg container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/images/logo.png" style="width: 150px;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fas fa-bars" style="color:#4a515c !important;"></i>
+    </button>
+
+    <div class="collapse navbar-collapse text-center bg-white p-3 rounded" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="jobs.html">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="placement.html">Placement</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</section>
+
+
+  <!-- Header -->
+  <header id="home" data-aos="fade-down">
+    <h1>Explore Our Popular Courses</h1>
+    <p class="lead mt-3">Upgrade your skills and achieve your career goals with our expert-led programs</p>
+  </header>
+<!-- Courses -->
+  <section id="courses" class="container text-center my-5">
+    <h2 class="fw-bold mb-4" data-aos="fade-up">Our Popular Courses</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-right">
+        <div class="course-card">
+          <h5 class="fw-bold text-primary">Full Stack Development</h5>
+          <p>Build powerful websites using HTML, CSS, JS, React, Node, and MongoDB.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="course-card">
+          <h5 class="fw-bold text-success">cybersecurity</h5>
+          <p>Learn how to secure networks, applications, and protect against cyber threats.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-left">
+        <div class="course-card">
+          <h5 class="fw-bold text-warning">cloud computing</h5>
+          <p>Understand AWS, Azure, and Google Cloud to build scalable solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Courses Section -->
+  <section id="courses" class="container my-5">
+   
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold">Our Featured Courses</h2>
+      <p>Choose from a wide range of industry-relevant courses designed by professionals</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="card course-card h-100 shadow-sm">
+    
+          <img src="webdevelopment.jpg" class="card-img-top" alt="Web Development">
+          <div class="card-body">
+            
+            <h5 class="card-title"><b>Web Development</b></h5>
+            <p class="card-text">Learn to build responsive and dynamic websites using HTML, CSS, JavaScript, and frameworks like React & Bootstrap.</p>
+           <a href="web.html" class="btn">View Course</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card course-card h-100 shadow-sm">
+          <img src="cybersecurity.jpg" class="card-img-top" alt="Data Science">
+          <div class="card-body">
+            <h5 class="card-title"><b>CyberSecurity</b></h5>
+            <p class="card-text">Learn how to secure networks, applications, and protect against cyber threats.</p>
+            <a href="cyber.html" class="btn">View Course</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card course-card h-100 shadow-sm">
+          <img src="cloud.png" class="card-img-top" alt="AI & Machine Learning">
+          <div class="card-body">
+            <h5 class="card-title"><b>Cloud Computing</b></h5>
+            <p class="card-text">Understand AWS, Azure, and Google Cloud to build scalable solutions.</p>
+            <a href="cloud.html" class="btn">View Course</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card course-card h-100 shadow-sm">
+          <img src="fullstack.png" class="card-img-top" alt="AI & Machine Learning">
+          <div class="card-body">
+            <h5 class="card-title"><b>Fullstack Development</b></h5>
+            <p class="card-text">A Java Full Stack Developer is proficient in both front-end and back-end development, leveraging Java technologies to build robust, scalable, and user-friendly web applications.</p>
+            <a href="fullstack.html" class="btn">View Course</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card course-card h-100 shadow-sm">
+          <img src="bfsi.jpg" class="card-img-top" alt="AI & Machine Learning">
+          <div class="card-body">
+            <h5 class="card-title"><b>B F S I </b></h5>
+            <p class="card-text">The Banking, Financial Services, and Insurance (BFSI) sector has become a powerhouse of opportunities</p>
+            <a href="bfsi.html" class="btn">View Course</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card course-card h-100 shadow-sm">
+          <img src="dm.jpg" class="card-img-top" alt="AI & Machine Learning">
+          <div class="card-body">
+            <h5 class="card-title"><b>Digital Marketing</b></h5>
+            <p class="card-text">Digital marketing uses the internet and digital technologies to promote products and services, reaching potential customers online through various channels like websites.</p>
+            <a href="digital.html" class="btn">View Course</a>
+          </div>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </section>
+
+   <!-- Importance Section -->
+  <section id="importance" class="importance-section text-center my-5 mx-3">
+    <div class="container">
+      <div data-aos="fade-up">
+        <h2 class="fw-bold mb-4"> additional benefits for every course</h2>
+        <p class="lead mx-auto" style="max-width: 800px;">
+         -every week softskills and CRT classes<br>
+        - weekly tests to upgrade learners capability<br>
+        - we can shape the learners to crack the job <br>
+        - playzone to keep learners mind freshly<br>
+        - mock interviews ,experts guidance <br>
+        - course completion certificate<br>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Importance Section -->
+  <section id="importance" class="importance-section text-center my-5 mx-3">
+    <div class="container">
+      <div data-aos="fade-up">
+        <h2 class="fw-bold mb-4"> What will you learn?</h2>
+        <p class="lead mx-auto" style="max-width: 800px;">
+         - Help you understand the industry requirements<br>
+        - Assess your individual Strengths and Weaknesses<br>
+        - Prepare skill gap analysis<br>
+        - Polish your approach to ensure that you deliver your very best impression when meeting potential recruiters<br>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Importance Section -->
+  <section id="importance" class="importance-section text-center my-5 mx-3">
+    <div class="container">
+      <div data-aos="fade-up">
+        <h2 class="fw-bold mb-4">What is the Course Duration?</h2>
+        <p class="lead mx-auto" style="max-width: 800px;">
+         It's typically a 5-6 months course to complete all the syllabus with practice and placement
+      </div>
+    </div>
+  </section>
+  <!-- Importance Section -->
+  <section id="importance" class="importance-section text-center my-5 mx-3">
+    <div class="container">
+      <div data-aos="fade-up">
+        <h2 class="fw-bold mb-4">What other Support will I receive from Trainers ?</h2>
+        <p class="lead mx-auto" style="max-width: 800px;">
+         Our Trainers are available from 9 AM - 10 PM for any doubts and clarifications.<br>
+         we are also give reference to get the job<br>
+         personal guidance to set your carear path<br>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="whychooseus" class="why-choose-us text-center my-5 mx-3">
+    <div class="container">
+      <div data-aos="fade-up">
+        <h2 class="fw-bold mb-5">Why Choose Us?</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="flip-left">
+          <div class="p-4 border rounded-4 shadow-sm h-100">
+            <h5 class="fw-bold">Expert Instructors</h5>
+            <p>Our mentors are industry professionals who bring real-world experience to the classroom.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+          <div class="p-4 border rounded-4 shadow-sm h-100">
+            <h5 class="fw-bold">Hands-on Learning</h5>
+            <p>Practical projects and case studies help you apply your knowledge effectively.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="400">
+          <div class="p-4 border rounded-4 shadow-sm h-100">
+            <h5 class="fw-bold">Career Support</h5>
+            <p>We guide you with interview preparation, resume building, and job placement support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact text-center my-5 mx-3">
+    <div class="container" data-aos="fade-up">
+      <h2 class="fw-bold mb-4">Contact Us</h2>
+      <p class="lead mb-5">We’re here to help! Reach out for any queries or assistance.</p>
+
+      <div class="row justify-content-center contact-info">
+        <div class="col-md-4 mb-3">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>KPHB road.no 1,opposite to GHMC park, hyderbad City, India</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <i class="fas fa-phone"></i>
+          <p>+91 6305901606</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <i class="fas fa-envelope"></i>
+          <p>innosparkyournextstep@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a href="#" class="mx-2 text-primary fs-4"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="mx-2 text-info fs-4"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="mx-2 text-danger fs-4"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="mx-2 text-dark fs-4"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Learn With Us. All Rights Reserved.</p>
+  </footer>
+  <a href="enroll.html" class="floating-btn">Enroll Now</a>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>

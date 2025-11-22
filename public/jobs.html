@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - InnoSpark Coaching Center</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8f9fa;
+      color: #000 !important;
+      overflow-x: hidden;
+    }
+
+    /* =======================
+       HEADER SECTION (Navbar)
+    ======================= */
+    section.header-section {
+      background: #ffffff;
+      padding: 10px 0;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar-nav .nav-link {
+      color: #0479fe !important;
+      font-weight: 600;
+      margin: 0 10px;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #0d2b4d !important;
+    }
+
+body {
+            background-color: #f8f9fa;
+        }
+        .job-card {
+            border-radius: 10px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .apply-btn {
+            font-weight: bold;
+        }
+
+        .navbar-brand mb-0 h1{
+             font-weight: bold;
+             text-align: center;
+        }
+    /* =======================
+        HERO SECTION
+    ======================= */
+    .about-hero {
+      height: 55vh;
+      background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 100, 0.6)),
+        url("bg1.png") center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+
+    /* =======================
+        REUSABLE SECTIONS
+    ======================= */
+    .section {
+      padding: 70px 0;
+    }
+
+
+    /* FIX MOBILE RIGHT-SIDE EXTRA SPACE */
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
+/* Prevent any child element from overflowing */
+* {
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- ============================
+        HEADER SECTION (Navbar)
+  ============================ -->
+  <section class="header-section">
+  <nav class="navbar navbar-expand-lg container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/images/logo.png" style="width: 150px;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="jobs.html">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="placement.html">Placement</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</section>
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1">Latest Job Openings</span>
+    </div>
+</nav>
+
+<div class="container my-4">
+
+    <div id="jobList"></div>
+
+</div>
+
+<script>
+// Static job data (you can replace with your own)
+const jobs = [
+    {
+        title: "Frontend Developer",
+        company: "TechCorp Ltd",
+        location: "Remote",
+        description: "Looking for a React.js developer with 2+ years experience.",
+        link: "https://www.indeed.com/viewjob?jk=example1"
+    },
+    {
+        title: "Digital Marketing Executive",
+        company: "Bright Media",
+        location: "Mumbai, India",
+        description: "Experience in SEO, Google Ads & Social Media Marketing.",
+        link: "https://www.naukri.com/job-listings-example"
+    },
+    {
+        title: "Software Engineer Intern",
+        company: "StartUpHub",
+        location: "Bangalore, India",
+        description: "Internship for computer science graduates.",
+        link: "https://jobsora.com/example-job"
+    }
+];
+
+function loadJobs() {
+    const container = document.getElementById("jobList");
+
+    jobs.forEach(job => {
+        container.innerHTML += `
+            <div class="job-card">
+                <h4>${job.title}</h4>
+                <p class="mb-1"><strong>${job.company}</strong> · ${job.location}</p>
+                <p>${job.description}</p>
+                <a href="${job.link}" target="_blank" class="btn btn-primary apply-btn">Apply Now</a>
+            </div>
+        `;
+    });
+}
+
+loadJobs();
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

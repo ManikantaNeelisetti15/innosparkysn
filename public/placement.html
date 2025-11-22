@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Placements - Learn With Us</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgb(255, 255, 255);
+      backdrop-filter: blur(6px);
+    }
+    .navbar-brand, .nav-link {
+      color: #005eff !important;
+      font-weight: 500;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #007bff, #00b4d8);
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      border-radius: 0 0 40px 40px;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 3rem;
+    }
+
+    /* APPLY WHITE BACKGROUND + BLUE TEXT TO ALL SECTIONS */
+    section {
+      background: #ffffff !important;
+      color: #0d6efd !important;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Keep company logos normal */
+    .companies img {
+      max-height: 70px;
+      filter: grayscale(100%);
+      transition: 0.3s ease;
+    }
+    .companies img:hover {
+      filter: none;
+      transform: scale(1.1);
+    }
+
+    /* Stats Section */
+    .stat-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      color: #000 !important;
+    }
+    .stat-card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #000 !important;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #0d6efd;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    .timeline-step {
+      padding: 20px 40px;
+      position: relative;
+      width: 50%;
+    }
+    .timeline-step::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -13px;
+      background-color: #fff;
+      border: 4px solid #0d6efd;
+      top: 30px;
+      border-radius: 50%;
+    }
+    .left { left: 0; }
+    .right { left: 50%; }
+    .right::after { left: -13px; }
+
+    .timeline-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      color: #000 !important;
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline::after { left: 31px; }
+      .timeline-step {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      .timeline-step::after { left: 15px; }
+      .right { left: 0; }
+    }
+
+    /* Testimonial */
+    .testimonial {
+      background: rgba(255,255,255,0.9);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      color: #000 !important;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: white !important;
+      text-align: center;
+      padding: 80px 20px;
+      border-radius: 40px;
+      border: 2px solid #007bff;
+      color: #007bff !important;
+    }
+
+    /* Footer */
+    footer {
+      background: #343a40;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    /* Prevent overflow */
+    html, body, img {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #17426f;
+      color: white;
+      padding: 15px 22px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+      z-index: 10000;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.35);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <section class="header-section">
+  <nav class="navbar navbar-expand-lg container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/images/logo.png" style="width: 150px;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fas fa-bars" style="color:#4a515c !important;"></i>
+    </button>
+
+    <div class="collapse navbar-collapse text-center bg-white p-3 rounded" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="jobs.html">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="placement.html">Placement</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</section>
+
+
+  <!-- Header -->
+  <header id="overview" data-aos="fade-down">
+    <h1>Our Placement Achievements</h1>
+    <p class="lead mt-3">Empowering students with skills for top-tier jobs</p>
+  </header>
+
+  <!-- Companies -->
+  <section id="companies" class="companies container text-center my-5">
+    <h2 class="fw-bold mb-4" data-aos="fade-up">Top Companies Hiring Our Students</h2>
+    <div class="row justify-content-center g-4" data-aos="zoom-in">
+      <div class="col-4 col-md-2"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"></div>
+      <div class="col-4 col-md-2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvF1MoDaFDwe3tbO0F8rv3TJVGVQYLswAV2g&s"></div>
+      <div class="col-4 col-md-2"><img src="https://download.logo.wine/logo/Tech_Mahindra/Tech_Mahindra-Logo.wine.png"></div>
+      <div class="col-4 col-md-2"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"></div>
+      <div class="col-4 col-md-2"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dell_Logo.png"></div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="my-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5" data-aos="fade-up">Your Placement Journey</h2>
+
+      <div class="timeline">
+        <div class="timeline-step left" data-aos="fade-right">
+          <div class="timeline-content">
+            <h5>Step 1: Skill Development</h5>
+            <p>Start with intensive training on technical and soft skills.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step right" data-aos="fade-left">
+          <div class="timeline-content">
+            <h5>Step 2: Mock Interviews</h5>
+            <p>Practice through tests and interview simulations.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step left" data-aos="fade-right">
+          <div class="timeline-content">
+            <h5>Step 3: Resume Building</h5>
+            <p>Create a polished resume and strong portfolio.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step right" data-aos="fade-left">
+          <div class="timeline-content">
+            <h5>Step 4: Recruiter Interviews</h5>
+            <p>Attend placement drives and company interviews.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step left" data-aos="fade-right">
+          <div class="timeline-content">
+            <h5>Step 5: Offer Letter</h5>
+            <p>Get selected and begin your dream career!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section id="stats" class="container text-center my-5">
+    <h2 class="fw-bold mb-5">Our Placement Statistics</h2>
+
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="stat-card">
+          <h3 class="fw-bold text-primary">98%</h3>
+          <p>Placement Rate</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="stat-card">
+          <h3 class="fw-bold text-success">20+</h3>
+          <p>Companies</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="stat-card">
+          <h3 class="fw-bold text-warning">₹7 LPA</h3>
+          <p>Avg Package</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="stat-card">
+          <h3 class="fw-bold text-danger">₹25 LPA</h3>
+          <p>Highest Package</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta my-5 mx-3">
+    <h2 class="fw-bold mb-3">Start Your Placement Journey Today!</h2>
+    <p class="lead mb-4">Join thousands of students who transformed their careers.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container text-center my-5">
+    <h2 class="fw-bold mb-4">Contact Our Placement Team</h2>
+    <p>📞 +91 6305901606 | ✉️ innosparkyournextstep@gmail.com</p>
+
+    <div class="mt-3">
+      <a href="#" class="text-primary fs-4 mx-2"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="text-info fs-4 mx-2"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-danger fs-4 mx-2"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Learn With Us. All Rights Reserved.</p>
+  </footer>
+ <a href="enroll.html" class="floating-btn">Enroll Now</a>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - InnoSpark Coaching Center</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8f9fa;
+      color: #000 !important;
+      overflow-x: hidden;
+    }
+
+    /* =======================
+       HEADER SECTION (Navbar)
+    ======================= */
+    section.header-section {
+      background: #ffffff;
+      padding: 10px 0;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar-nav .nav-link {
+      color: #0479fe !important;
+      font-weight: 600;
+      margin: 0 10px;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #0d2b4d !important;
+    }
+
+
+    /* =======================
+        HERO SECTION
+    ======================= */
+    .about-hero {
+      height: 55vh;
+      background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 100, 0.6)),
+        url("bg1.png") center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+
+    /* =======================
+        REUSABLE SECTIONS
+    ======================= */
+    .section {
+      padding: 70px 0;
+    }
+
+    .image-card {
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Gallery */
+    .gallery-img {
+      height: 240px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.20);
+    }
+
+
+    /* =======================
+        FLOATING ENROLL BUTTON
+    ======================= */
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #17426f;
+      color: white;
+      padding: 15px 22px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+      z-index: 10000;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+      .d-flex.flex-nowrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 10px;
+}
+
+
+    /* =======================
+        FOOTER
+    ======================= */
+    footer {
+      background: #222f77;
+      color: #fff;
+      text-align: center;
+      padding: 40px 10px;
+      margin-top: 50px;
+    }
+
+    footer .social-links a {
+      color: #f2f4f6;
+      margin: 0 8px;
+      font-size: 1.4rem;
+    }
+
+    /* FIX MOBILE RIGHT-SIDE EXTRA SPACE */
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
+/* Prevent any child element from overflowing */
+* {
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- ============================
+        HEADER SECTION (Navbar)
+  ============================ -->
+  <section class="header-section">
+  <nav class="navbar navbar-expand-lg container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/images/logo.png" style="width: 150px;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="jobs.html">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="placement.html">Placement</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</section>
+
+
+  <!-- HERO -->
+  <section class="about-hero" data-aos="zoom-in">
+    <div>
+      <h1>InnoSpark — Your Next Step</h1>
+      <p>Empowering students with real-time learning, placement support, and hands-on training.</p>
+    </div>
+  </section>
+
+
+  <!-- WHO WE ARE -->
+  <section class="section" data-aos="fade-up">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4">
+          <div class="image-card">
+            <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=900&q=80"
+              class="img-fluid" alt="Who we are" loading="lazy">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h2 class="text-primary fw-bold">Who We Are</h2>
+          <p><strong>InnoSpark Coaching Center</strong> is a dynamic learning hub dedicated to empowering students to
+            develop industry-ready skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GALLERY -->
+  <section class="section text-center" data-aos="fade-up">
+    <div class="container">
+      <h2 class="mb-4 fw-bold text-primary">3 Years of Experience in Training & Placement</h2>
+
+      <div class="d-flex flex-nowrap overflow-auto py-3">
+        <img src="assets/images/1.jpg" class="gallery-img mx-2" loading="lazy">
+        <img src="assets/images/2.jpg" class="gallery-img mx-2" loading="lazy">
+        <img src="assets/images/3.jpg" class="gallery-img mx-2" loading="lazy">
+        <img src="assets/images/4.jpg" class="gallery-img mx-2" loading="lazy">
+        <img src="assets/images/5.jpg" class="gallery-img mx-2" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MISSION -->
+  <section class="section" data-aos="fade-left">
+    <div class="container">
+      <div class="row align-items-center flex-md-row-reverse">
+        <div class="col-md-6 mb-4">
+          <div class="image-card">
+            <img src="assets/images/mission.png" class="img-fluid" alt="Mission" loading="lazy">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h2 class="text-primary fw-bold">Our Mission</h2>
+          <p>We deliver high-quality learning powered with practical training, creative thinking, and industry-level
+            experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FLOATING ENROLL BUTTON -->
+  <a href="enroll.html" class="floating-btn">Enroll Now</a>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="social-links mb-2">
+      <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/innospark-your-next-step"><i class="fab fa-linkedin"></i></a>
+      <a href="https://youtube.com/@Innospark-yournextstep"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2025 InnoSpark Coaching Center.</p>
+  </footer>
+
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1100,
+      once: true
+    });
+  </script>
+
+</body>
+
+</html>

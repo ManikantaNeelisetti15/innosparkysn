@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cloud Computing Course - Learn With Us</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #eaf2ff, #ffffff);
+      background-attachment: fixed;
+    }
+
+    .navbar {
+      background: rgb(251, 253, 255);
+      backdrop-filter: blur(6px);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #0464f5 !important;
+      font-weight: 500;
+    }
+
+    header {
+      background: linear-gradient(135deg, #007bff, #00b4d8);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      border-radius: 0 0 50px 50px;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 3rem;
+    }
+
+    .course-details {
+      background-color: rgba(255, 255, 255, 0.97);
+      border-radius: 30px;
+      padding: 50px;
+      margin-top: -50px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .course-details img {
+      border-radius: 20px;
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    .register-btn {
+      background-color: #007bff;
+      color: white;
+      border-radius: 30px;
+      padding: 12px 40px;
+      font-weight: 600;
+      transition: 0.3s;
+      border: none;
+    }
+
+    .register-btn:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      margin-top: 80px;
+    }
+
+    /* Prevent right-side overflow on all pages */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+/* Fix flex containers overflowing */
+.d-flex.flex-nowrap {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  box-sizing: border-box !important;
+  scrollbar-width: none;
+}
+.d-flex.flex-nowrap::-webkit-scrollbar {
+  display: none;
+}
+
+/* Fix images overflowing */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix sections spacing */
+section {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Sticky Enroll Button */
+.floating-enroll {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 12px 22px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+   <section class="header-section">
+  <nav class="navbar navbar-expand-lg container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/images/logo.png" style="width: 150px;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fas fa-bars" style="color:#0d6efd !important;"></i>
+    </button>
+
+    <div class="collapse navbar-collapse text-center bg-white p-3 rounded" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="jobs.html">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="placement.html">Placement</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</section>
+
+
+  <!-- Header -->
+  <header data-aos="fade-down">
+    <h1>Cloud Computing Course</h1>
+    <p class="lead mt-3">Master cloud platforms like AWS, Azure, and Google Cloud to build scalable and secure applications.</p>
+  </header>
+
+  <!-- Course Details -->
+  <section class="container course-details my-5" data-aos="fade-up">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <img src="cloud.png" alt="Cloud Computing" />
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3">About the Course</h2>
+        <p>
+          The Cloud Computing course teaches you how to design, deploy, and manage applications in cloud environments. You’ll gain hands-on experience with AWS, Microsoft Azure, and Google Cloud to build modern, scalable, and secure systems.
+        </p>
+        <ul>
+          <li>✅ Learn cloud fundamentals, architecture, and deployment models</li>
+          <li>✅ Work with AWS, Azure, and Google Cloud services</li>
+          <li>✅ Understand virtualization, containerization (Docker, Kubernetes)</li>
+          <li>✅ Manage cloud security, networking, and storage</li>
+          <li>✅ Deploy cloud-based web applications</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <div data-aos="fade-up">
+      <h3 class="fw-bold mb-3">Course Highlights</h3>
+      <ul>
+        <li>🧑‍🏫 Industry-expert instructors with cloud experience</li>
+        <li>🧰 Hands-on projects and labs on real cloud platforms</li>
+        <li>💼 Resume building and job placement support</li>
+        <li>📜 Certification upon successful completion</li>
+        <li>🕐 Duration: 5-6 months (includes practice and mentoring)</li>
+      </ul>
+    </div>
+    <div class="text-center mt-5" data-aos="zoom-in">
+      <a href="enroll.html" class="btn register-btn btn-lg">enroll now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Learn With Us. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Animation JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InnoSpark | Your Next Step</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <style>
+    body {
+      background-color: #f6f9fc;
+      color: #0f172a;
+      scroll-behavior: smooth;
+      padding-top: 90px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    header.shrink {
+      padding: 5px 0;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+
+    .navbar-nav .nav-link {
+      color: #0056d2;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #00b4d8;
+    }
+
+    .enroll-btn {
+      background: linear-gradient(45deg, #0056d2, #00b4d8);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .enroll-btn:hover {
+      background: linear-gradient(45deg, #00b4d8, #0056d2);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      min-height: 90vh;
+      background: url('assets/images/banner.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 15px;
+    }
+
+    .hero-content {
+      color: #fff;
+      background: rgba(15, 23, 42, 0.7);
+      padding: 35px 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      margin-bottom: 20px;
+    }
+
+    .hero-btn {
+      background: #00b4d8;
+      color: #fff;
+      padding: 10px 25px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .hero-btn:hover {
+      background: #0056d2;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about {
+      background-color: #f8faff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      color: #0056d2;
+      margin-bottom: 10px;
+    }
+
+    .about p {
+      color: #334155;
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .about-btn {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #0056d2;
+      border: 1.5px solid #00b4d8;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .about-btn:hover {
+      background-color: #00b4d8;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ===== WHY CHOOSE US ===== */
+    .why-innospark {
+      padding: 80px 15px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .why-innospark h2 {
+      color: #0056d2;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .why-innospark .subtitle {
+      color: #64748b;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    .why-box {
+      background: #f3f8ff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-left: 5px solid #00b4d8;
+      height: 100%;
+    }
+
+    .why-box:hover {
+      background: #e8f1ff;
+      transform: translateY(-8px);
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 50px;
+      border-top: 5px solid #00b4d8;
+    }
+
+    .contact-section h2 {
+      font-size: 2rem;
+      color: #00b4d8;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .contact-info {
+      background: rgba(255, 255, 255, 0.05);
+      display: inline-block;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 180, 216, 0.1);
+      margin-bottom: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-info:hover {
+      transform: scale(1.02);
+    }
+
+    .social-media a img {
+      width: 35px;
+      height: 35px;
+      transition: all 0.3s ease;
+    }
+
+    .social-media a img:hover {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 6px #00b4d8);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .floating-enroll {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #17426f;
+      color: white;
+      padding: 15px 22px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+      z-index: 10000;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.35);
+    }
+  </style>
+</head>
+
+<body>
+  
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/images/logo.png" alt="InnoSpark Logo" class="img-fluid" style="height: 50px;">
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+          <ul class="navbar-nav gap-3 text-center">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="jobs.html">Jobs</a></li>
+            <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="placement.html">Placements</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+       
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <h1>InnoSpark - Your Next Step</h1>
+      <p>Empowering students with real-time learning, placement support, and hands-on training.</p>
+      <a href="enroll.html" class="hero-btn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+      <h2>About Us</h2>
+      <p class="lead">
+        Welcome to <strong>INNOSPARK</strong>, a trusted platform dedicated to helping students build strong academic foundations and achieve their learning goals.
+      </p>
+      <p>
+        Our mission is to guide students with care, inspire curiosity, and help them gain the confidence to succeed in their exams and future careers.
+      </p>
+      <a href="about.html" class="about-btn">About Us →</a>
+    </div>
+  </section>
+
+  <!-- ===== COURSES ===== -->
+  <section class="about" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+      <h2>Courses</h2>
+      <p class="lead">
+        Course Duration: <strong>4–5 months</strong><br>
+        • Weekly soft skills and CRT classes<br>
+        • Weekly tests to upgrade learners’ capabilities<br>
+        • Job-focused training<br>
+        • Playzone to refresh minds<br>
+        • Mock interviews & expert guidance<br>
+        • Completion certificate<br>
+        • Placement support<br>
+      </p>
+      <a href="courses.html" class="about-btn">View Courses →</a>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why-innospark">
+    <div class="container">
+      <h2 data-aos="fade-up">Why Choose InnoSpark?</h2>
+      <p class="subtitle" data-aos="fade-up">We don’t just teach — we transform careers.</p>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4" data-aos="fade-up"><div class="why-box"><h3>👨‍🏫 Expert Mentors</h3><p>Learn from industry professionals.</p></div></div>
+        <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100"><div class="why-box"><h3>💻 Real-Time Projects</h3><p>Build hands-on projects.</p></div></div>
+        <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200"><div class="why-box"><h3>🧠 Practical Learning</h3><p>Concepts through examples & live demos.</p></div></div>
+        <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="300"><div class="why-box"><h3>💬 Soft Skills & Interview Prep</h3><p>Develop communication & mock sessions.</p></div></div>
+        <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="400"><div class="why-box"><h3>🚀 Placement Assistance</h3><p>Career guidance & resume building.</p></div></div>
+        <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="500"><div class="why-box"><h3>📍 Flexible Learning Options</h3><p>Online or offline at your pace.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact-section" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-info mx-auto">
+        <p>📞 <strong>+91 6305901606</strong></p>
+
+        
+        <p>📧 innosparkyournextstep@gmail.com</p>
+      </div>
+      <h3>Follow Us</h3>
+      <div class="social-media d-flex justify-content-center gap-4 mb-5 flex-wrap">
+        <a href="https://www.instagram.com/innospark_your_next_step?igsh=YmxjZHhsNzJveHE1"><img src="assets/images/instagram.png" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/in/innospark-your-next-step/"><img src="assets/images/linkedin.png" alt="LinkedIn"></a>
+        <a href="#"><img src="assets/images/facebook.png" alt="Facebook"></a>
+      </div>
+      <div class="footer-bottom">© 2025 InnoSpark. All rights reserved.</div>
+    </div>
+  </section>
+    <a href="enroll.html" class="btn btn-primary floating-enroll">Enroll Now</a>
+
+  <!-- ===== JS ===== -->
+  <script>
+    // Header shrink on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    });
+
+    // Initialize AOS
+    AOS.init({
+      once: true,
+      duration: 1000
+    });
+  </script>
+
+</body>
+</html>
